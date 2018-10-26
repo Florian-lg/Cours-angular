@@ -1,0 +1,9 @@
+<form [formGroup]="userFormGroup" (submit)="onSubmit()" class="form">
+  <div class="ui input">
+    <input formControlName="log" class="my-input" type="text" name="log" />
+    <input formControlName="pass" class="my-input" type="password" name="pass" />
+  </div>
+
+  <button [disabled]="userFormGroup.invalid" class="ui primary button" type="submit" *ngIf="!loading">Login</button>
+  <app-loading *ngIf="loading"></app-loading>
+</form>

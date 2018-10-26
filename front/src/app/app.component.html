@@ -1,0 +1,13 @@
+
+<!-- J'affiche le loading pendant la vérification -->
+<app-loading *ngIf="loadingPage"></app-loading>
+
+<ng-container *ngIf="!loadingPage">
+    <ng-container *ngIf="!user.user.logged">
+        <app-login></app-login>
+    </ng-container>
+
+    <ng-container *ngIf="user.user.logged">
+        <app-list-tickets></app-list-tickets>
+    </ng-container>
+</ng-container>
